@@ -3,7 +3,7 @@ const app = express()
 app.use(express.static('public'))
 
 app.get('/jtest', (req, res) => {
-app.set('json spaces', 40);
+/*app.set('json spaces', 40);*/
 r1={};
 r1.ip='10.1.1.86';
 r1.mac='00:01:02:03:04:05';
