@@ -14,7 +14,9 @@ r2.ip='10.1.1.75';
 r2.mac='00:11:22:33:44:55';
 r2.time=new Date();
 a1=[r1,r2];
-res.json('{\"RESULT\":'+JSON.stringify(a1)+'}');
+result={a1}
+}
+res.json(JSON.stringify(result));
 })
 app.get('/register', (req, res) => {
   var now=new Date();
