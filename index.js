@@ -4,7 +4,11 @@ app.use(express.static('public'))
 
 app.get('/jtest', (req, res) => {
 app.set('json spaces', 40);
-res.json(req)
+r1={};
+r1.t1='t1';
+r1.t2='t2';
+r1.t3=1234;
+res.json(r1)
 })
 app.get('/register', (req, res) => {
   var now=new Date();
