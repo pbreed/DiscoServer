@@ -5,19 +5,16 @@ app.use(express.static('public'))
 app.get('/jtest', (req, res) => {
 app.set('json spaces', 40);
 r1={};
-r1.t1='Fred';
-r1.t2='Bob';
-r1.t3=1234;
+r1.ip='10.1.1.86';
+r1.mac='00:01:02:03:04:05';
+r1.time=new Date();
 
 r2={};
-r2.t1='Bill';
-r2.t2='George';
-r2.t3=999;
-
+r2.ip='10.1.1.75';
+r2.mac='00:11:22:33:44:55';
+r2.time=new Date();
 a1=[r1,r2];
-
-
-res.json(a1)
+res.json('{"result:"'+a1+'}');
 })
 app.get('/register', (req, res) => {
   var now=new Date();
