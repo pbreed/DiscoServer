@@ -16,7 +16,7 @@ r2.time=new Date();
 a1=[r1,r2];
 result={a1};
 
-res.json(JSON.stringify(result));
+res.json(result);
 })
 app.get('/register', (req, res) => {
   var now=new Date();
