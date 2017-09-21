@@ -3,7 +3,7 @@ const app = express()
 app.use(express.static('public'))
 app.get('/register', (req, res) => {
   var now=new Date();
-  res.send('Version 4 get shown at '+now.toString())
+  res.send('Version 4 get shown at '+now.toString()+' from '+req.ip.toString())
 })
 app.post('/post', (req, res) => {
   var now=new Date();
