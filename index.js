@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 app.get('/', (req, res) => {
-  res.send('Version2!')
+  vae now=new Date();
+  res.send('Version3!'+date.toString())
 })
 app.listen(3000, () => console.log('Server running on port 3000'))
