@@ -9,6 +9,8 @@ xhr.open("POST", url, true);
 xhr.setRequestHeader("Content-type", "application/json");
 xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
+		var Ptmp=(xhr.responseText);
+	    document.getElementById('postbox').value=Ptmp;
     }
 }
 var data2 = document.getElementById('bigbox').value;
@@ -41,13 +43,8 @@ Jason Basic config code<BR>
 <input type="button" onclick="Post()" value="Post">
 <input type="button" onclick="Get()" value="Get">
 <HR>
-<FORM  ACTION="appupdate.htm" enctype="multipart/form-data" METHOD=POST>
-Update Application<BR>
-Select application file:<BR>
-<INPUT NAME="appfile" TYPE="file" SIZE="80">
-<BR><INPUT TYPE="submit" VALUE="Send File"><BR>
-<HR>
-</FORM>
+<textarea id="postbox" cols="80" rows="10" name="pbox"></textarea>
+
 </body>
 </html>
 
