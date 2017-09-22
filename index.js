@@ -29,7 +29,7 @@ app.get('/register', (req, res) => {
 })
 
 app.get('/diag', (req, res) => {
-  app.set('json spaces', 40);*/
+  app.set('json spaces', 40);
   res.json(LastPost);
   //var now=new Date();
   //res.send('Version 4 get shown at '+now.toString()+' from '+req.get('X-Real-IP').toString())
