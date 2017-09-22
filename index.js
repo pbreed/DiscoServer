@@ -10,7 +10,7 @@ app.get('/jtest', (req, res) => {
 //app.set('json spaces', 40);*/
 r1={};
 r1.ip='10.1.1.86';
-r1.mac='00:01:02:03:04:05';
+r1.mac='00:01:02:03:04:55';
 r1.time=new Date();
 
 r2={};
