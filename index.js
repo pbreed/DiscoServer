@@ -38,6 +38,7 @@ app.get('/diag', (req, res) => {
 
 
 app.post('/post', (req, res) => {
+  console.log(' Start of post');
   response_obj ={};
   response_obj.NatIP=req.get('X-Real-IP');
   response_obj.LocalIp = req.body.LocalIp;
@@ -46,9 +47,11 @@ app.post('/post', (req, res) => {
   response_obj.Platform=req.body.Platform;
   response_obj.when=new Date();
   result={response_obj};
-  makerec.createrec(response_obj.NatIP,response_obj.LocalIp,response_obj.Mac,response_obj.AppName,response_obj.Platform);
   LastPost=result;
   res.json(result);
+  makerec.createrec(response_obj.NatIP,response_obj.LocalIp,response_obj.Mac,response_obj.AppName,response_obj.Platform);
+  console.log(' End of post');
+
 //  res.send(' Tried to parse'+ response_obj.when.toString()+ 'IP'+response_obj.LocalIp);
 })
 
