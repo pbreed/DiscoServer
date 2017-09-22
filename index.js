@@ -32,7 +32,7 @@ app.post('/post', (req, res) => {
   response_obj.AppName=req.body.AppName;
   response_obj.Platform=req.body.Platform;
   response_obj.when=new Date();
-  res.send(' Tried to parse');
+  res.send(' Tried to parse'+ response_obj.when.toString());
 })
 
 app.post('/post2', (req, res) => {
