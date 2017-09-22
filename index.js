@@ -5,9 +5,8 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 var LastPost={};
 
-
 app.get('/jtest', (req, res) => {
-/*app.set('json spaces', 40);*/
+//app.set('json spaces', 40);*/
 r1={};
 r1.ip='10.1.1.86';
 r1.mac='00:01:02:03:04:05';
@@ -22,11 +21,20 @@ result={a1};
 
 res.json(result);
 })
+
 app.get('/register', (req, res) => {
   res.json(LastPost);
   //var now=new Date();
   //res.send('Version 4 get shown at '+now.toString()+' from '+req.get('X-Real-IP').toString())
 })
+
+app.get('/diag', (req, res) => {
+  app.set('json spaces', 40);*/
+  res.json(LastPost);
+  //var now=new Date();
+  //res.send('Version 4 get shown at '+now.toString()+' from '+req.get('X-Real-IP').toString())
+})
+
 
 app.post('/post', (req, res) => {
   response_obj ={};
