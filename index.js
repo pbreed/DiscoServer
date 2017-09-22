@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 app.use(express.static('public'))
 
@@ -23,8 +24,13 @@ app.get('/register', (req, res) => {
   res.send('Version 4 get shown at '+now.toString()+' from '+req.get('X-Real-IP').toString())
 })
 app.post('/post', (req, res) => {
-  var now=new Date();
-  res.send('Version 5 post shown at '+now.toString())
+  response_obj ={}
+  response_obj.LocalIp = req.body.LocalIp;
+  response_obj.Mac = req.body.Mac;
+  response_obj.AppName=req.body.AppName;
+  response_obj.Platform=req.body.Platform;
+  response_obj.when=new Date();
+  res.json(response_obj);
 })
 app.listen(3000, () => console.log('Server running on port 3000'))
 
