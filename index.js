@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const makerec = require('./knexmakerec')
+const qrec = require('./knexquery')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 var LastPost={};
@@ -20,7 +21,7 @@ r2.time=new Date();
 a1=[r1,r2];
 result={a1};
 
-res.json(result);
+res.json(qrec.query);
 })
 
 app.get('/register', (req, res) => {
