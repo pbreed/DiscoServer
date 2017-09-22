@@ -27,6 +27,7 @@ app.get('/register', (req, res) => {
 
 app.post('/post', (req, res) => {
   response_obj ={};
+  response_obj.NatIP=req.get('X-Real-IP');
   response_obj.LocalIp = req.body.LocalIp;
   response_obj.Mac = req.body.Mac;
   response_obj.AppName=req.body.AppName;
