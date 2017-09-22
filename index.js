@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+const makerec = require('./knexmakerec')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 var LastPost={};
@@ -45,6 +46,7 @@ app.post('/post', (req, res) => {
   response_obj.Platform=req.body.Platform;
   response_obj.when=new Date();
   result={response_obj};
+  makerec.createrec(response_obj.NatIP,response_obj.LocalIp,response_obj.Mac,response_obj.AppName,response_obj.Platform);
   LastPost=result;
   res.json(result);
 //  res.send(' Tried to parse'+ response_obj.when.toString()+ 'IP'+response_obj.LocalIp);
